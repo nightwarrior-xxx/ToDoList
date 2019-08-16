@@ -13,7 +13,12 @@
                 {% if item.completed %}
                     <tr class="task-completed">
                         <td> {{ forloop.counter }}</td>
-                        <td class="striker">{{ item.item }}</td>
+                        <td class="striker">
+                          <a href="{% url 'todo:edit' item.id %}">
+                              {% csrf_token %}
+                              {{ item.item }}
+                          </a>
+                        </td>
                         <td>
                             <form method="POST" action="{% url 'todo:uncross' item.id %}">
                               {% csrf_token %}
@@ -30,7 +35,12 @@
                 {% else %}
                     <tr>
                         <td> {{ forloop.counter }}</td>
-                        <td>{{ item.item }}</td>
+                        <td>
+                          <a href="{% url 'todo:edit' item.id %}">
+                          {% csrf_token %}
+                          {{ item.item }}
+                          </a>
+                        </td>
                         <td> <form method="POST" action="{% url 'todo:cross' item.id %}">
                             {% csrf_token %}
                             <button type="submit" class="btn btn-success" name="id" value={{item.id}}>Cross</button>

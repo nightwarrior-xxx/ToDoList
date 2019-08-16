@@ -1,9 +1,9 @@
 from .models import List
 from .forms import ListForm
-from django.views import View
 from django.contrib import messages
+from django.views import View
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, DeleteView
+from django.views.generic import ListView, DeleteView, DetailView
 
 
 # Class based view for home page
@@ -56,7 +56,7 @@ class Delete(DeleteView):
 
 
 
-class Cross(View):
+class Cross(ListView):
 
     def post(self, request, *args, **kwargs):
         id = request.POST.get('id')
@@ -85,3 +85,20 @@ class Uncross(ListView):
             messages.error(request, 'Internal server error')
 
         return redirect('/')
+
+
+def edit(request, list_id):
+    id = list_id
+    if request.method == "POST":
+        item = List.objects.get(pk=id)
+        form = ListForm(request.POST or None, instance=item)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Item Edited')
+            return redirect('/')
+
+    else:
+        items = List.objects.get(id=id)
+        return render(request, 'snippets/edit.html', {"item": items})
+        
+

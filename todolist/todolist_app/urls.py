@@ -4,7 +4,8 @@ from .views import (
     About,
     Delete,
     Cross,
-    Uncross
+    Uncross,
+    edit
 )
 
 
@@ -16,4 +17,5 @@ urlpatterns = [
     path('delete/<int:list_id>',Delete.as_view(), name='delete'),
     path('cross/<int:list_id>',Cross.as_view(), name='cross'),
     path('uncross/<int:list_id>',Uncross.as_view(), name='uncross'),
+    path('edit/<int:list_id>',edit, name='edit'),
 ]
