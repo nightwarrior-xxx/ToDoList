@@ -15,8 +15,9 @@
       </li>
 
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="To Do Items" aria-label="Search">
+    <form class="form-inline my-2 my-lg-0" method="POST">
+      {% csrf_token %}
+      <input class="form-control mr-sm-2" type="text" placeholder="To Do Items" name="item">
       <button class="btn btn-success my-2 my-sm-0" type="submit">Add Items</button>
     </form>
   </div>

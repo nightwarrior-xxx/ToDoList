@@ -1,0 +1,11 @@
+.task-completed {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.spacing {
+    margin-top: 200px;
+}
+
+.striker {
+    text-decoration: line-through;
+}

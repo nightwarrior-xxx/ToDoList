@@ -1,0 +1,56 @@
+{% load static %}
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">SNo.</th>
+      <th scope="col">Item</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+        {% if object_list %}
+            {% for item in object_list %}
+                {% if item.completed %}
+                    <tr class="task-completed">
+                        <td> {{ forloop.counter }}</td>
+                        <td class="striker">{{ item.item }}</td>
+                        <td>
+                            <form method="POST" action="{% url 'todo:uncross' item.id %}">
+                              {% csrf_token %}
+                              <button type="submit" class="btn btn-success" name="id" value={{item.id}}>Uncross</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form method="POST" action="{% url 'todo:delete' item.id %}">
+                              {% csrf_token %}
+                              <button type="submit" class="btn btn-danger" name="id" value="{{ item.id }}">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td> {{ forloop.counter }}</td>
+                        <td>{{ item.item }}</td>
+                        <td> <form method="POST" action="{% url 'todo:cross' item.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-success" name="id" value={{item.id}}>Cross</button>
+                          </form>
+                        </td>
+                        <td>
+                          <form action="{% url 'todo:delete' item.id %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" name='id' value='{{ item.id }}' class="btn btn-danger">Delete</button>
+                          </form>
+                        </td>
+                    </tr>
+                {% endif %}
+                    
+            {% endfor %}
+        {% else %}
+
+            <div class="">
+        
+        {% endif %}
+
+  </tbody>
+</table>
