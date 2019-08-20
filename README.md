@@ -16,10 +16,10 @@
 
 
 ## About
-TodoList is a web application that keeps your day to day tasks at one place. You can add tasks that you need to perform in you daily life and complete it within time limit.
+TodoList is a web application that keeps your day to day tasks at one place. You can add tasks that you need to perform in your daily life and complete it within a time limit.
 
 ## Uses
 - It makes you feel amazing and reduce the burden to remember you daily tasks.
-- Saves your times and let you complete things fastly by bringing your dauly tasks at one place.
+- Saves your times and let you complete things fastly by bringing your daily tasks at one place.
 
 ![Real Time Demo](./todo-list.gif)
