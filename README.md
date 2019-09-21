@@ -1,4 +1,4 @@
-<p align=center>
+<p align="center">
 <img src="logo.png">
 </p>
 
@@ -148,7 +148,7 @@ Make sure that there is onle one extra line after the file ends and remember the
 
 ##  :camera: Gallery
 
-<p align=center>
+<p align="center">
 <img src="todo-list.gif" width="100%" height="100%">
 </p>
 
