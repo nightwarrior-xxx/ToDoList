@@ -148,7 +148,9 @@ Make sure that there is onle one extra line after the file ends and remember the
 
 ##  :camera: Gallery
 
-![Real Time Demo](./todo-list.gif)
+<p align=center>
+<img src="todo-list.gif" width="70px">
+</p>
 
 ## :star2: Credit/Acknowledgment
 Credits goes to me
