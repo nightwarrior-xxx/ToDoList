@@ -12,7 +12,7 @@
   - [Pre-Requisites](#notebook-pre-requisites)
   - [Developmen Environment](#nut_and_bolt-development-environment)
   - [File Structure](#file_folder-file-structure) 
-- [Uses](#use-uses)
+- [Uses](#star2-uses)
 - [Community](#cherry_blossom-community)
   - [Contribution](#fire-contribution)
   - [Branches](#cactus-branches)
@@ -105,7 +105,7 @@ python3 manage.py createsuperuser
 │       └── views.py
 
 ```
-## :use: Uses
+## :star2: Uses
 - It makes you feel amazing and reduce the burden to remember you daily tasks.
 - Saves your times and let you complete things fastly by bringing your daily tasks at one place.
 
